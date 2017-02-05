@@ -43,6 +43,9 @@ TomahawkTrayIcon::TomahawkTrayIcon( QObject* parent )
 {
 #ifdef Q_OS_MAC
     QIcon icon( RESPATH "icons/tomahawk-grayscale-icon-128x128.png" );
+    #if QT_VERSION >= QT_VERSION_CHECK( 5, 6, 1 )
+        icon.setIsMask( true );
+    #endif
 #else
     QIcon icon( RESPATH "icons/tomahawk-icon-128x128.png" );
 #endif
